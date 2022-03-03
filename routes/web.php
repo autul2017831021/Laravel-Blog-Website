@@ -30,8 +30,12 @@ Route::post('/blog/{blogPost}',function(BlogPost $blogPost){
         //abort(403);
         return back()->with('unauthorized','You can not delete this post');
     }
-    $BlogPostController = new BlogPostController();
-    $BlogPostController->showBlogByID();
+    
+    $id = $blogPost->id;
+    $blog = BlogPost::findOrfail($id);
+    $blog->delete();
+    return redirect('/blog');
+
 });
 
 // Auth Related Routes

@@ -61,9 +61,7 @@ class BlogPostController extends Controller
     }
 
     
-    public function deleteBlogById( $id){
-        $blog = $this->blogPost->findOrfail($id);
-        $blog->delete();
-        return redirect('/blog');
+    public function deleteBlogById(){
+        
     }
 }
