@@ -28,8 +28,8 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         Gate::define('deleteBlogByID', function (User $user, BlogPost $blogPost) {
-            //dd($user->id,$blogPost->user_id);
-            return $user->id === $blogPost->user_id;
+            //dd($user->id,$blogPost->user_id,gettype($user->id),gettype($blogPost->user_id),$blogPost);
+            return $user->id === (int)$blogPost->user_id;
         });
     }
 }
