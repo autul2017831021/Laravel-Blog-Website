@@ -1,3 +1,5 @@
+@extends('layouts.app')
+@section('content')
 <div class="flex-center position-ref full-height">
     <div >
         <div class="no-auth-home-page">
@@ -5,3 +7,4 @@
         </div>
     </div>
 </div>
+@endsection
