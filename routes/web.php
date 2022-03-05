@@ -18,13 +18,13 @@ use App\Http\Controllers\BlogPost\BlogPostController;
 |
 */
 
-Route::get('/',[HomeController::class,'index']);
+Route::get('/',[HomeController::class,'index'])->name('home');
 
 // Blog Related Routes
-Route::get('/blog',[BlogPostController::class,'index']);
-Route::get('/blog/create',[BlogPostController::class,'showCreateBlogForm']);
+Route::get('/blog',[BlogPostController::class,'index'])->name('blog');
+Route::get('/blog/create',[BlogPostController::class,'showCreateBlogForm'])->name('blog.create');
 Route::post('/blog/create',[BlogPostController::class,'storeBlog']);
-Route::get('/blog/{blogId}',[BlogPostController::class,'showBlogByID']);
+Route::get('/blog/{blogId}',[BlogPostController::class,'showBlogByID'])->name('blog.blogId');
 Route::post('/blog/{blogPost}',function(BlogPost $blogPost){
     if(Gate::denies('deleteBlogByID',$blogPost)){
         //abort(403);

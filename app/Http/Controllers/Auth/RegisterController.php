@@ -9,9 +9,9 @@ use Hash;
 
 class RegisterController extends Controller
 {
-    // public function __construct(){
-    //     $this->middleware('user');
-    // }
+    public function __construct(){
+        $this->middleware('guest');
+    }
 
     public function showRegisterForm(){
         return view('auth.register');

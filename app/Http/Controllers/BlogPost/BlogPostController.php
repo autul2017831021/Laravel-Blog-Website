@@ -13,6 +13,7 @@ class BlogPostController extends Controller
     private $blogPost;
     private $user;
     public function __construct(){
+        $this->middleware('auth');
         $this->blogPost = new BlogPost();
         $this->user = new User();
     }

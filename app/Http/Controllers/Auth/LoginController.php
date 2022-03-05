@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     public function __construct(){
-        //$this->middleware('user')->except('login');
+        //dd($this->middleware('guest')->except('logout') );
+        $this->middleware('guest')->except('logout');
     }
 
     public function showLoginForm(){
